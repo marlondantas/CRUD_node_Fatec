@@ -1,0 +1,6 @@
+DoginNode.code-workspace
+node_modules/
+package-lock.json
+startMongo.bat
+startNode.bat
+data/

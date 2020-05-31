@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+
+    <title><%= title %></title>
+    
+  </head>
+
+  <body>
+    <center>
+      <br>
+
+      <h1><%= title %></h1>
+
+      <br>
+        <table border="2">
+          <tr>
+            <th>Nome</th>
+            <th>Moedas</th>
+            <th></th>
+          </tr>  
+          
+          <%if (typeof form == 'object' && form) { %>
+          <form method="POST" action="<%= action %>">
+            <tr>
+              <td><input type="text" name="user" value="<%= form.user %>"></td>
+              <td><input type="text" name="moedas" value="<%= form.moedas %>"></td>
+              <td><input type="submit" value="Enviar"></td>
+            </tr> 
+          </form>
+          <% } %>
+        </table>
+
+      <br>
+
+      <%if (typeof docs == 'object' && docs) { %>
+      <table border="2">
+        <tr>
+          <th>Nome</th>
+          <th>Moedas</th>
+          <th>E</th>
+          <th>X</th>
+        </tr>  
+        <% docs.forEach(function(alunos){ %>
+          <tr>
+            <td><%= alunos.user %></td>
+            <td>R$<%= alunos.moedas %></td>
+            <td><a href="/editar/<%= alunos._id %>">E</a></td>
+            <td><a href="/deletar/<%= alunos._id %>" onclick="return confirm('Tem certeza que deseja excluir?');" >D</a></td>
+          </tr>
+        <% }) %>
+        
+      </table>
+      <% } %>
+      
+      <br>
+      <h1>CRUD COMPLETO!  </h1>
+    </center>
+  </body>
+</html>
