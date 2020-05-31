@@ -2,7 +2,7 @@
 Exercício de NODE com MongoDB para a Fatec Cruzeiro 
 
 O banco de dados mongo tem a estrutura:
-    fatecDog
-        aluno
-            user
-            moedas
+    fatecDog  
+        aluno  
+            user  
+            moedas  
